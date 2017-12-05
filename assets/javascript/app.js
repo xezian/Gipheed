@@ -9,11 +9,6 @@ var gipheed = {
 
     },
     theFuncs = {
-        createDivs = function() {
-            // declare all the divs
-            // give them ids and classes
-            // append them to the body 
-        },
         makeApiRequest = function() {
             // make a request of the api. this function will be called when a button gets clicked on
         },
