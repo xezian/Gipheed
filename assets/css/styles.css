@@ -1,21 +1,42 @@
+body {
+    background-color: #ffc0cdb0;
+    font-family: 'Dosis', sans-serif;
+}
 footer {
     position: fixed;
+    text-align: center;
+    line-height: 5vh;
     bottom: 0;
     width: 100%;
     height: 5vh;
-    background-color: #ffc0cdb0;
+    background-color: #ffb6c8;
     border-top: 2px solid grey;
+    z-index: 1;
 }
 nav {
-    height: 10vh;
-    border-bottom: 2px solid grey;
+    border-bottom: 1px solid grey;
     border-right: 2px solid grey;
     border-left: 2px solid grey;
+    margin: 0
+}
+/* here is code I found on stack overflow to remove the bootstrap glow effect from buttons on the navbar */
+button:focus, button:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+.fa-spin-reverse {
+    -webkit-animation: fa-spin 2s infinite linear reverse;
+            animation: fa-spin 2s infinite linear reverse;
+}
+.side-bar {
+    padding: 10px;
 }
 .main-contain {
-    height: 85vh;
+    height: 86vh;
     overflow: auto;
     background-color: #afff2f72;
+    border-top: 1px solid grey;
+    z-index: 0;
 }
 .go-right {
     float: right;
@@ -38,4 +59,45 @@ nav {
 }
 .btnz {
     z-index: 1;
+}
+.navbar-toggler {
+    border: none;
+}
+.pink {
+    background-color: #eb2fcc85;
+    border: 1px solid gold;
+}
+.orange {
+    background-color: #eb9a2f71;
+    border: 1px solid silver;
+}
+.green {
+    background-color: #2feb3f7e;
+    border: 1px solid pink;
+}
+.yellow {
+    background-color: #ebcf2f70;
+    border: 1px solid teal;
+}
+.red {
+    background-color: #eb2f2f81;
+    border: 1px solid red;
+}
+.white {
+    background-color: #ffffff70;
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+.turquise {
+    background-color: #2febbc85;
+    border: 1px solid orangered;
+}
+.blue {
+    background-color: #2f3feb83;
+    border: 1px solid wheat;
+}
+.black {
+    background-color: #00000094;
+    border: 1px solid gold;
+    color: #ffffff;
 }
