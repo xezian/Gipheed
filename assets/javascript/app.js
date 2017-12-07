@@ -1,11 +1,15 @@
 // this is an app which will send a request to the GIPHY API based on which button the user pressed to return an assortment of GIFs to to the display for the user to enjoy looking at, and which can be held still or paused by clicking
 var theVars = {
     query: "",
-    limit: 5,
-    rating: "G",
     giphURL: "",
     stillURL: "",
     colorChoices: ["primary", "success", "info", "warning", "danger", "inverse", "faded", "light", "dark"],
+    limit: function() {
+        return $("#limit-choice").val();
+    },
+    rating: function() {
+        return $("#rating-choice").val();
+    },
     random: function () {
         if ($("#random").is(":checked")) {
             return true
@@ -18,14 +22,15 @@ var randoColor = function() {
     return theVars.colorChoices[Math.floor(Math.random() * theVars.colorChoices.length)];
 };
 var querySearchURL = function(query, limit, rating) {
-    return `http://api.giphy.com/v1/gifs/search?q=${query}&api_key=CukVvGuLlYmHG7AfCRA2mnKRIiGe1XoN&limit=${limit.toString()}&rating=${rating}`;
+    return `http://api.giphy.com/v1/gifs/search?q=${query}&api_key=CukVvGuLlYmHG7AfCRA2mnKRIiGe1XoN&limit=${limit}&rating=${rating}`;
 } 
 var queryRandomURL = function(query, rating) {
-    return `http://api.giphy.com/v1/gifs/random?q=${query}&api_key=CukVvGuLlYmHG7AfCRA2mnKRIiGe1XoN&rating=${rating}`;
+    return `http://api.giphy.com/v1/gifs/random?api_key=CukVvGuLlYmHG7AfCRA2mnKRIiGe1XoN&tag=${query}&rating=${rating}`;
 } 
 var displaySomeBeauty = function () {    
     var somethingToSee = $("<img/>");
     somethingToSee
+        .attr("class", "gipher")
         .attr("src", stillURL)
         .attr("data-still", stillURL)
         .attr("data-giph", giphURL)
@@ -33,8 +38,9 @@ var displaySomeBeauty = function () {
 }
 var makeApiRequest = function() {
     if (theVars.random()) {
-        var queryURL = queryRandomURL(theVars.query, theVars.rating);
-        for (var i = 0; i < theVars.limit; i++) {
+        var queryURL = queryRandomURL(theVars.query, theVars.rating());
+        console.log(queryURL);
+        for (var i = 0; i < parseInt(theVars.limit()); i++) {
             $.ajax({
                 url: queryURL,
                 method: "GET"
@@ -46,7 +52,7 @@ var makeApiRequest = function() {
             });
         }
     } else { 
-        var queryURL = querySearchURL(theVars.query, theVars.limit, theVars.rating);
+        var queryURL = querySearchURL(theVars.query, theVars.limit(), theVars.rating());
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -72,10 +78,20 @@ var theClicks = function() {
         newButton
             .attr("class", `btnz btn btn-${randoColor()}`)
             .attr("id", inputField)
-            .attr("data-reaction", inputField)
+            .attr("data-reaction", inputField.replace(/\s/g,'+'))
             .text(inputField)
             .appendTo($("#button-party"));
-    })
+    });
+    $(document).on("click", ".gipher", function() {
+        var gipher = $(this);
+        if (gipher.attr("src") === gipher.attr("data-still")) {
+            gipher.attr("src", gipher.attr("data-giph"))
+        } else if (gipher.attr("src") === gipher.attr("data-giph")) {
+            gipher.attr("src", gipher.attr("data-still"))
+        } else {
+            console.log("problem!")
+        }
+    });
 };
 
 theClicks();
