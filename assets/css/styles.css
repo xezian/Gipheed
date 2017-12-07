@@ -57,6 +57,10 @@ button:focus, button:active {
     overflow-x: scroll;
     white-space: nowrap;
 }
+.giph-holder {
+    overflow: auto;
+    padding-bottom: 5vh;
+}
 .btnz {
     z-index: 1;
 }

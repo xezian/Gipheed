@@ -20,8 +20,7 @@ var theVars = {
         }
     }
 };
-// select a random bootstrap color
-// TODO change to random css colors
+// select a random color
 var randoColor = function() {
     return theVars.colorChoices[Math.floor(Math.random() * theVars.colorChoices.length)];
 };
@@ -42,6 +41,7 @@ var displaySomeBeauty = function () {
     somethingToSee
         .attr("class", "gipher")
         .attr("src", stillURL)
+        .attr("data-small", smallGiphURL)
         .attr("data-still", stillURL)
         .attr("data-giph", giphURL)
         .appendTo("#giph-area");
@@ -58,7 +58,8 @@ var makeApiRequest = function() {
                 method: "GET"
             }).done(function(response) {
                 console.log(response);
-                giphURL = response.data.fixed_height_downsampled_url;
+                giphURL = response.data.image_original_url;
+                smallGiphURL = response.data.fixed_height_small_url;
                 stillURL = response.data.fixed_height_small_still_url;
                 displaySomeBeauty();
             });
@@ -73,7 +74,8 @@ var makeApiRequest = function() {
             console.log(response);
             // now we go through the array inside the response object which should be the length limit was set to
             for (var i = 0; i < response.data.length; i++) {
-                giphURL = response.data[i].images.fixed_height.url;
+                giphURL = response.data[i].images.original.url;
+                smallGiphURL = response.data[i].images.fixed_height_small.url;
                 stillURL = response.data[i].images.fixed_height_small_still.url;
                 displaySomeBeauty();
             }
@@ -139,12 +141,38 @@ var theClicks = function() {
     });
     $(document).on("click", ".gipher", function() {
         var gipher = $(this);
-        if (gipher.attr("src") === gipher.attr("data-still")) {
-            gipher.attr("src", gipher.attr("data-giph"))
+        if (gipher.attr("src") === gipher.attr("data-still") || gipher.attr("src") === gipher.attr("data-small")) {
+            var row = $("<div/>")
+            gipher
+                .attr("data-chosen", "chosen")
+                .attr("src", gipher.attr("data-giph"))
+                .appendTo(row);
+            row
+                .attr("class", "row justify-content-center")
+                .appendTo("#chosen-giph-area");
         } else if (gipher.attr("src") === gipher.attr("data-giph")) {
-            gipher.attr("src", gipher.attr("data-still"))
+            gipher
+                .attr("data-chosen", "not-chosen")
+                .attr("src", gipher.attr("data-still"))
+                .appendTo("#giph-area");
         } else {
             console.log("problem!")
+        }
+    });
+    $(document).on("mouseenter", ".gipher", function() {
+        if ($(this).attr("data-chosen") === "chosen") {
+            return
+        } else {
+            var gipher = $(this);
+            gipher.attr("src", gipher.attr("data-small"));
+        }
+    });
+    $(document).on("mouseleave", ".gipher", function() {
+        if ($(this).attr("data-chosen") === "chosen") {
+            return
+        } else {
+            var gipher = $(this);
+            gipher.attr("src", gipher.attr("data-still"));
         }
     });
     $(document).on("click", "#fa-edit", function() {
