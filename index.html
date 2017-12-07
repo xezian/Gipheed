@@ -1,84 +1,91 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-<!-- Added link to Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-<!-- Added link to the jQuery Library -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- Added a link to app.js -->
-        <script src="assets/javascript/app.js"></script>
-<!-- Added a link to meyerweb reset -->
-        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-<!-- Added a link to Bootstrap CSS-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-<!-- Added a link to stylesheet -->
-        <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-        <title>Gipheed Gif Emoter</title>
-    </head>
-    <body>
-        <div class="collapse navbar-collapse go-right" id="makeNewButton">
-                <div class="bg-inverse p-4">
-                        <h4 class="text-black go-right">Add yr own btn!</h4>
-                        <div class="form-group">
-                                <input type="text" class="form-control go-right" id="what-button" placeholder="told ya so">
-                                <input type="submit" class="btn btn-light go-right" id="new-button" value="click">
+        <head>
+                <meta charset="utf-8">
+        <!-- Added link to Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <!-- Added link to the jQuery Library -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Added a link to app.js -->
+                <script src="assets/javascript/app.js"></script>
+        <!-- Added a link to meyerweb reset -->
+                <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+        <!-- Added a link to Bootstrap CSS-->
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <!-- Added a link to stylesheet -->
+                <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+                <title>Gipheed Gif Emoter</title>
+        </head>
+        <body>  
+                <div class="collapse navbar-collapse go-right" id="makeNewButton">
+                        <div class="bg-inverse p-4">
+                                <h4 class="text-black go-right">Add yr own btn!</h4>
+                                <div class="form-group">
+                                        <input type="text" class="form-control go-right" id="what-button" placeholder="told ya so">
+                                        <input type="submit" class="btn btn-light go-right" id="new-button" value="click">
+                                </div>
                         </div>
                 </div>
-        </div>
-        <div class="collapse navbar-collapse go-left" id="settingsForRequestUrl">
-                <div class="bg-inverse p-4">
-                        <h4 class="text-black go-left">Make some choices!</h4>
-                        <div class="form-group">
-                                <label for="exampleFormControlSelect1">How many results?</label>
-                                <select class="form-control" id="limit-choice">
-                                        <option>5</option>
-                                        <option>10</option>
-                                        <option>15</option>
-                                        <option>20</option>
-                                        <option>25</option>
-                                </select>
-                                <label for="exampleFormControlSelect2">What rating?</label>
-                                <select class="form-control" id="rating-choice">
-                                        <option>Y</option>
-                                        <option>G</option>
-                                        <option>PG</option>
-                                        <option>PG-13</option>
-                                        <option>R</option>
-                                </select>
+                <div class="collapse navbar-collapse go-left" id="settingsForRequestUrl">
+                        <div class="bg-inverse p-4">
+                                <h4 class="text-black go-left">Make some choices!</h4>
+                                <div class="form-group">
+                                        <label for="exampleFormControlSelect1">How many results?</label>
+                                        <select class="form-control" id="limit-choice">
+                                                <option>5</option>
+                                                <option>10</option>
+                                                <option>15</option>
+                                                <option>20</option>
+                                                <option>25</option>
+                                        </select>
+                                        <label for="exampleFormControlSelect2">What rating?</label>
+                                        <select class="form-control" id="rating-choice">
+                                                <option>Y</option>
+                                                <option>G</option>
+                                                <option>PG</option>
+                                                <option>PG-13</option>
+                                                <option>R</option>
+                                        </select>
+                                </div>
                         </div>
                 </div>
-        </div>
-        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-                <div class="col-lg-8 col-md-7" id="button-party">
-                        <button class="btnz btn btn-primary" id="happy-emoticon" data-reaction=":)">:)</button>
-                        <button class="btnz btn btn-info" id="sad-emoticon" data-reaction=":(">:(</button>
-                        <button class="btnz btn btn-warning" id="puzzled-emoticon" data-reaction=":/">:/</button>
-                        <button class="btnz btn btn-success" id="tongue-emoticon" data-reaction=":P">:P</button>
-                </div>
-                <div class="col-lg-2 col-md-2">
-                        <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="random" id="random" value="option1"> Random <br> (with tag)
-                                </label>
+                <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+                        <div class="col-lg-1 front">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#settingsForRequestUrl" aria-controls="settingsForRequestUrl" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                </button>
+                        </div>
+                        <div class="col-8 back" id="button-party">
+                                <button class="btnz btn btn-primary" id="happy" data-reaction="happy">😊</button>
+                                <button class="btnz btn btn-info" id="sad" data-reaction="sad">☹️</button>
+                                <button class="btnz btn btn-warning" id="puzzled" data-reaction="puzzled">😕</button>
+                                <button class="btnz btn btn-success" id="tongue" data-reaction="tongue+out">😛</button>
+                                <button class="btnz btn btn-primary" id="cool" data-reaction="cool">😎</button>
+                                <button class="btnz btn btn-info" id="starstruck" data-reaction="starstruck">🤩</button>
+                                <button class="btnz btn btn-warning" id="upside-down" data-reaction="upside+down+face">🙃</button>
+                                <button class="btnz btn btn-success" id="grimace" data-reaction="grimace">😬</button>
+                        </div>
+                        <div class="col-2 front">
+                                <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" name="random" id="random" value="option1"> Random <br> (with tag)
+                                        </label>
+                                </div>
+                        </div>
+                        <div class="col-1 front">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#makeNewButton" aria-controls="makeNewButton" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                </button>
+                        </div>
+                </nav>
+                <div class="container-fluid main-contain">      
+                        <div class="row justify-content-center" id="giph-area">
                         </div>
                 </div>
-                <div class="col-lg-1 col-md-2">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#settingsForRequestUrl" aria-controls="settingsForRequestUrl" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                        </button>
-                </div>
-                <div class="col-lg-1 col-md-1">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#makeNewButton" aria-controls="makeNewButton" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                        </button>
-                </div>
-        </nav>
-        <div class="row">
-                <div class="col-12" id="giph-area">
-                </div>
-        </div>
-    </body>
+                <footer class="row justify-content-center" id="footer">
+                        © Copyright 2017 Jason A. Leo
+                </footer>
+        </body>
 </html>

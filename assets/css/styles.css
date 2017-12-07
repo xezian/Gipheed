@@ -1,6 +1,41 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 5vh;
+    background-color: #ffc0cdb0;
+    border-top: 2px solid grey;
+}
+nav {
+    height: 10vh;
+    border-bottom: 2px solid grey;
+    border-right: 2px solid grey;
+    border-left: 2px solid grey;
+}
+.main-contain {
+    height: 85vh;
+    overflow: auto;
+    background-color: #afff2f72;
+}
 .go-right {
     float: right;
 }
 .go-left {
     float: left;
+}
+.gipher {
+    margin: 10px;
+    border: 1px solid grey;
+}
+.front {
+    z-index: 2;
+}
+.back {
+    z-index: 0;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+.btnz {
+    z-index: 1;
 }
