@@ -123,7 +123,6 @@ var faSpinReverse = function(icon) {
             .addClass("fas");
     }, 2000);
 };
-
 // sweet little function here to handle on click stuff
 var theClicks = function() {
     $(document).on("click", ".btnz", function() {

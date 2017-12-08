@@ -24,6 +24,7 @@ button:focus, button:active {
     outline: none !important;
     box-shadow: none !important;
 }
+
 .fa-spin-reverse {
     -webkit-animation: fa-spin 2s infinite linear reverse;
             animation: fa-spin 2s infinite linear reverse;
