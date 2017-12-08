@@ -29,11 +29,11 @@ var randoExistingButtons = function () {
 };
 // returns query url when performing normal search
 var querySearchURL = function(query, limit, rating) {
-    return `http://api.giphy.com/v1/gifs/search?q=${query}&api_key=CukVvGuLlYmHG7AfCRA2mnKRIiGe1XoN&limit=${limit}&rating=${rating}`;
+    return `https://api.giphy.com/v1/gifs/search?q=${query}&api_key=CukVvGuLlYmHG7AfCRA2mnKRIiGe1XoN&limit=${limit}&rating=${rating}`;
 };
 // returns query url when performing random search
 var queryRandomURL = function(query, rating) {
-    return `http://api.giphy.com/v1/gifs/random?api_key=CukVvGuLlYmHG7AfCRA2mnKRIiGe1XoN&tag=${query}&rating=${rating}`;
+    return `https://api.giphy.com/v1/gifs/random?api_key=CukVvGuLlYmHG7AfCRA2mnKRIiGe1XoN&tag=${query}&rating=${rating}`;
 };
 // gives the gif to an html element and sticks it to the page
 var displaySomeBeauty = function () {    
@@ -110,7 +110,7 @@ var faSpin = function (icon) {
             .removeClass("fa-spin")
             .addClass("fas");
     }, 2000);
-}
+};
 var faSpinReverse = function(icon) {
     icon
         .removeClass("fa")
@@ -122,7 +122,8 @@ var faSpinReverse = function(icon) {
             .removeClass("fa-spin-reverse")
             .addClass("fas");
     }, 2000);
-}
+};
+
 // sweet little function here to handle on click stuff
 var theClicks = function() {
     $(document).on("click", ".btnz", function() {
