@@ -24,7 +24,9 @@ button:focus, button:active {
     outline: none !important;
     box-shadow: none !important;
 }
-
+.btnx {
+    margin-right: 3px;
+}
 .fa-spin-reverse {
     -webkit-animation: fa-spin 2s infinite linear reverse;
             animation: fa-spin 2s infinite linear reverse;
@@ -35,7 +37,7 @@ button:focus, button:active {
 .main-contain {
     height: 86vh;
     overflow: auto;
-    background-color: #afff2f72;
+    background-color: #a5f31f7c;
     border-top: 1px solid grey;
     z-index: 0;
 }
